@@ -1,0 +1,93 @@
+const PROJECTS = [
+  {
+    id: 'early-men',
+    name: 'Early Men',
+    category: 'Web design + development',
+    image: 'assets/project-early-men.jpg',
+    year: '2026',
+    role: 'Design and frontend development',
+    scope: 'Art direction, responsive UI, interaction design',
+    summary: 'A stark, character-led digital home built around oversized typography, purposeful restraint, and a clear entry point into the Early Men world.',
+    challenge: 'Create a memorable first impression without burying the project identity beneath conventional Web3 interface patterns.',
+    outcome: 'A focused landing experience that makes the artwork and attitude the main event while keeping navigation direct.',
+    liveUrl: 'https://www.earlymenorigins.xyz/'
+  },
+  {
+    id: 'new-gen-society',
+    name: 'New Gen Society',
+    category: 'Web design + development',
+    image: 'assets/project-new-gen.jpg',
+    year: '2026',
+    role: 'Product design and frontend development',
+    scope: 'Information architecture, visual system, responsive build',
+    summary: 'A structured membership experience that presents the collection, utility, and application journey in one confident interface.',
+    challenge: 'Organize several community touchpoints without losing the playful personality of the collection.',
+    outcome: 'A clear, expressive homepage with strong hierarchy and direct routes into the society.',
+    liveUrl: null
+  },
+  {
+    id: 'custos',
+    name: 'Custos',
+    category: 'Product website',
+    image: 'assets/project-custos.jpg',
+    year: '2026',
+    role: 'Product design and frontend development',
+    scope: 'Positioning, product storytelling, interface design',
+    summary: 'A dark product site that explains environment-file security with a focused product demonstration and restrained technical language.',
+    challenge: 'Make a developer security tool feel trustworthy and understandable without turning the landing page into documentation.',
+    outcome: 'A compact product story that moves from risk to solution and installation with minimal friction.',
+    liveUrl: null
+  },
+  {
+    id: 'fomies',
+    name: 'Fomies',
+    category: 'NFT experience',
+    image: 'assets/project-fomies.jpg',
+    year: '2026',
+    role: 'Creative direction and web design',
+    scope: 'Visual direction, landing page, collection presentation',
+    summary: 'A bright, energetic collection page designed to frame the characters as the product and make the whitelist action unmistakable.',
+    challenge: 'Balance a loud visual identity with clear navigation and conversion paths.',
+    outcome: 'A playful launch surface with immediate recognition and a focused application journey.',
+    liveUrl: null
+  },
+  {
+    id: 'rare-bloom',
+    name: 'Rare Bloom',
+    category: 'Community website',
+    image: 'assets/project-rare-bloom.jpg',
+    year: '2026',
+    role: 'Brand expression and web design',
+    scope: 'Visual system, landing experience, application flow',
+    summary: 'A calm, dark community site using a singular floral identity to create a sense of selectivity and care.',
+    challenge: 'Communicate exclusivity without making the experience feel cold or inaccessible.',
+    outcome: 'A focused brand moment with a simple path into the community application.',
+    liveUrl: null
+  },
+  {
+    id: 'lost-n-found',
+    name: 'Lost N Found',
+    category: 'Digital experience',
+    image: 'assets/project-lost-n-found.jpg',
+    year: '2026',
+    role: 'Experience design and frontend development',
+    scope: 'Immersive art direction, navigation, responsive implementation',
+    summary: 'An atmospheric digital experience built around an isolated character, a cinematic environment, and minimal directional UI.',
+    challenge: 'Let the visual world carry the story while keeping navigation discoverable.',
+    outcome: 'A cinematic homepage that feels exploratory without sacrificing usability.',
+    liveUrl: null
+  },
+  {
+    id: 'tessonchain',
+    name: 'Tessonchain',
+    category: 'Portfolio website',
+    image: 'assets/project-tessonchain.jpg',
+    year: '2026',
+    role: 'Portfolio design and frontend development',
+    scope: 'Personal brand, responsive layout, art presentation',
+    summary: 'A warm artist portfolio that gives equal weight to personality, illustration, and a direct invitation to collaborate.',
+    challenge: 'Introduce the artist clearly while preserving enough space for the artwork to lead.',
+    outcome: 'A personal homepage with an immediate voice and a clear path to the wider body of work.',
+    liveUrl: null
+  }
+];

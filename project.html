@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Project case study by Mr FOMO Labs." />
+  <title>Project | Mr FOMO Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="projects.css" />
+</head>
+<body>
+  <header class="project-nav">
+    <a class="project-brand" href="index.html">mrfomo labs<span>®</span></a>
+    <a class="back-link" href="projects.html">All projects <span>↙</span></a>
+  </header>
+  <main id="project-detail"></main>
+  <footer class="project-footer"><span>© 2026 Mr FOMO Labs</span><a href="mailto:hello@mrfomo.dev">Start a project ↗</a></footer>
+  <script src="project-data.js"></script>
+  <script>
+    const id = new URLSearchParams(location.search).get('id');
+    const project = PROJECTS.find(item => item.id === id) || PROJECTS[0];
+    document.title = `${project.name} | Mr FOMO Labs`;
+    document.querySelector('#project-detail').innerHTML = `
+      <article class="case-study">
+        <section class="case-hero">
+          <p>${project.category}</p>
+          <h1>${project.name}</h1>
+          <div class="case-actions">
+            ${project.liveUrl ? `<a class="primary-link" href="${project.liveUrl}" target="_blank" rel="noreferrer">Visit live site ↗</a>` : ''}
+            <a href="mailto:hello@mrfomo.dev?subject=${encodeURIComponent(project.name + ' project enquiry')}">Ask about this project ↗</a>
+          </div>
+        </section>
+        <figure class="case-image"><img src="${project.image}" alt="${project.name} homepage design" width="900" height="489"></figure>
+        <section class="case-facts">
+          <div><span>Year</span><strong>${project.year}</strong></div>
+          <div><span>Role</span><strong>${project.role}</strong></div>
+          <div><span>Scope</span><strong>${project.scope}</strong></div>
+        </section>
+        <section class="case-copy">
+          <div><span>Overview</span><h2>${project.summary}</h2></div>
+          <div class="case-notes"><article><span>Challenge</span><p>${project.challenge}</p></article><article><span>Outcome</span><p>${project.outcome}</p></article></div>
+        </section>
+        <a class="next-project" href="project.html?id=${PROJECTS[(PROJECTS.indexOf(project) + 1) % PROJECTS.length].id}"><span>Next project</span><strong>${PROJECTS[(PROJECTS.indexOf(project) + 1) % PROJECTS.length].name} ↗</strong></a>
+      </article>`;
+  </script>
+</body>
+</html>

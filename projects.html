@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Selected digital projects by Mr FOMO Labs." />
+  <title>Projects | Mr FOMO Labs</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="projects.css" />
+</head>
+<body>
+  <header class="project-nav">
+    <a class="project-brand" href="index.html">mrfomo labs<span>®</span></a>
+    <a class="back-link" href="index.html#writing">Back home <span>↙</span></a>
+  </header>
+  <main>
+    <section class="projects-hero">
+      <p>Selected projects</p>
+      <h1>Work made to<br><span>move people.</span></h1>
+      <div class="hero-note">A collection of products, communities, and digital worlds designed and built by Mr FOMO Labs.</div>
+    </section>
+    <section class="project-index" aria-label="Project archive">
+      <div class="project-count"><span>Project archive</span><b id="project-count"></b></div>
+      <div class="archive-grid" id="archive-grid"></div>
+    </section>
+  </main>
+  <footer class="project-footer"><span>© 2026 Mr FOMO Labs</span><a href="mailto:hello@mrfomo.dev">Start a project ↗</a></footer>
+  <script src="project-data.js"></script>
+  <script>
+    const grid = document.querySelector('#archive-grid');
+    document.querySelector('#project-count').textContent = `${PROJECTS.length} projects`;
+    grid.innerHTML = PROJECTS.map((project, index) => `
+      <a class="archive-card ${index === 0 ? 'archive-featured' : ''}" href="project.html?id=${project.id}">
+        <div class="archive-image"><img src="${project.image}" alt="${project.name} project homepage" width="900" height="489"></div>
+        <div class="archive-info">
+          <div><strong>${project.name}</strong><span>${project.category}</span></div>
+          <small>${project.year}</small><b>↗</b>
+        </div>
+      </a>`).join('');
+  </script>
+</body>
+</html>
