@@ -25,9 +25,20 @@
       <div class="project-count"><span>Project archive</span><b id="project-count"></b></div>
       <div class="archive-grid" id="archive-grid"></div>
     </section>
+    <section class="proof" id="proof" aria-labelledby="proof-title">
+      <div class="proof-head">
+        <p>Proof of work</p>
+        <h2 id="proof-title">Everything I’ve<br><span>shipped so far.</span></h2>
+        <div class="hero-note">Agents, protocols, products, games, bots, and sites, public and private. Private repos show what was built without exposing the code.</div>
+      </div>
+      <div class="project-count"><span>Built and shipped</span><b id="proof-count"></b></div>
+      <div class="proof-filters" id="proof-filters" role="group" aria-label="Filter by category"></div>
+      <div class="proof-grid" id="proof-grid"></div>
+    </section>
   </main>
   <footer class="project-footer"><span>© 2026 Mr FOMO Labs</span><a href="mailto:hello@mrfomo.dev">Start a project ↗</a></footer>
   <script src="project-data.js"></script>
+  <script src="proof-data.js"></script>
   <script>
     const grid = document.querySelector('#archive-grid');
     document.querySelector('#project-count').textContent = `${PROJECTS.length} projects`;
@@ -39,6 +50,34 @@
           <small>${project.year}</small><b>↗</b>
         </div>
       </a>`).join('');
+
+    const proofGrid = document.querySelector('#proof-grid');
+    const proofFilters = document.querySelector('#proof-filters');
+    const proofCount = document.querySelector('#proof-count');
+    const categories = ['All', ...new Set(PROOF_OF_WORK.map(item => item.category))];
+    const renderProof = (category) => {
+      const items = category === 'All' ? PROOF_OF_WORK : PROOF_OF_WORK.filter(item => item.category === category);
+      proofCount.textContent = `${items.length} projects`;
+      proofFilters.querySelectorAll('button').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.category === category)));
+      proofGrid.innerHTML = items.map(item => `
+        <article class="proof-card">
+          <div class="proof-meta"><span>${item.category}</span><small>${item.year}</small></div>
+          <h3>${item.name}</h3>
+          <p>${item.summary}</p>
+          <ul class="proof-stack">${item.stack.map(tag => `<li>${tag}</li>`).join('')}</ul>
+          <div class="proof-links">
+            ${item.caseStudy ? `<a href="project.html?id=${item.caseStudy}">Case study ↗</a>` : ''}
+            ${item.liveUrl ? `<a href="${item.liveUrl}" target="_blank" rel="noreferrer">Live ↗</a>` : ''}
+            ${item.codeUrl ? `<a href="${item.codeUrl}" target="_blank" rel="noreferrer">Code ↗</a>` : '<span>Private repo</span>'}
+          </div>
+        </article>`).join('');
+    };
+    proofFilters.innerHTML = categories.map(category => `<button type="button" data-category="${category}">${category}</button>`).join('');
+    proofFilters.addEventListener('click', (event) => {
+      const button = event.target.closest('button');
+      if (button) renderProof(button.dataset.category);
+    });
+    renderProof('All');
   </script>
 </body>
 </html>

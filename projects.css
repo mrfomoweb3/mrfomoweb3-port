@@ -30,6 +30,28 @@ main { width:min(100% - 48px,1320px); margin:auto; }
 .archive-info strong { font:600 16px "Manrope",sans-serif; }
 .archive-info span,.archive-info small { color:var(--muted); font-size:11px; }
 .archive-info b { color:var(--accent); font-weight:400; }
+.proof { padding:0 4vw 120px; scroll-margin-top:24px; }
+.proof-head { padding:60px 0 70px; }
+.proof-head > p { margin:0 0 22px; color:var(--accent); font-size:11px; letter-spacing:.14em; text-transform:uppercase; }
+.proof-head h2 { margin:0; font:500 clamp(40px,6vw,84px)/.95 "Manrope",sans-serif; letter-spacing:-.065em; }
+.proof-head h2 span { color:var(--muted); }
+.proof-filters { display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 22px; }
+.proof-filters button { padding:9px 14px; border:1px solid var(--line); border-radius:999px; background:transparent; color:var(--muted); font:500 12px "DM Sans",sans-serif; cursor:pointer; transition:.25s var(--ease); }
+.proof-filters button:hover { color:var(--text); border-color:color-mix(in srgb,var(--accent) 55%,var(--line)); }
+.proof-filters button[aria-pressed="true"] { background:var(--accent); border-color:var(--accent); color:#17120e; }
+.proof-filters button:focus-visible,.proof-links a:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+.proof-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:14px; }
+.proof-card { min-width:0; display:flex; flex-direction:column; padding:22px 22px 20px; border:1px solid var(--line); border-radius:var(--radius); background:var(--panel); transition:transform .35s var(--ease),border-color .35s var(--ease); }
+.proof-card:hover { transform:translateY(-4px); border-color:color-mix(in srgb,var(--accent) 55%,var(--line)); }
+.proof-meta { display:flex; justify-content:space-between; color:var(--muted); font-size:10px; letter-spacing:.12em; text-transform:uppercase; }
+.proof-card h3 { margin:18px 0 10px; font:600 20px "Manrope",sans-serif; letter-spacing:-.03em; }
+.proof-card p { margin:0 0 18px; color:var(--muted); font-size:13px; line-height:1.6; }
+.proof-stack { display:flex; flex-wrap:wrap; gap:6px; margin:auto 0 18px; padding:0; list-style:none; }
+.proof-stack li { padding:4px 9px; border:1px solid var(--line); border-radius:999px; color:var(--text); font-size:10px; }
+.proof-links { display:flex; flex-wrap:wrap; gap:16px; padding-top:14px; border-top:1px solid var(--line); font-size:12px; }
+.proof-links a { color:var(--accent); }
+.proof-links a:hover { text-decoration:underline; text-underline-offset:3px; }
+.proof-links span { color:var(--muted); }
 .project-footer { width:min(100% - 48px,1400px); margin:auto; padding:30px 0 38px; border-top:1px solid var(--line); display:flex; justify-content:space-between; color:var(--muted); font-size:11px; }
 .project-footer a:hover { color:var(--accent); }
 .case-study { padding:8vh 4vw 120px; }
@@ -49,5 +71,6 @@ main { width:min(100% - 48px,1320px); margin:auto; }
 .case-notes p { color:var(--muted); font-size:14px; line-height:1.7; }
 .next-project { display:flex; justify-content:space-between; align-items:end; padding:34px 0; border-top:1px solid var(--line); }
 .next-project strong { font:500 clamp(28px,4vw,54px) "Manrope",sans-serif; letter-spacing:-.05em; color:var(--accent); }
-@media(max-width:700px){.project-nav,main,.project-footer{width:calc(100% - 32px)}.projects-hero{min-height:55dvh;padding:70px 0}.projects-hero h1,.case-hero h1{font-size:clamp(45px,15vw,68px)}.hero-note{margin:28px 0 0}.project-index,.case-study{padding-left:0;padding-right:0}.archive-grid{grid-template-columns:1fr}.archive-featured{grid-column:auto}.case-actions{flex-direction:column;align-items:flex-start}.case-facts{grid-template-columns:1fr;gap:24px}.case-notes{grid-template-columns:1fr;margin-left:0;gap:28px}.next-project{align-items:flex-start;flex-direction:column;gap:16px}.project-footer{gap:20px;flex-direction:column}}
+@media(max-width:700px){.project-nav,main,.project-footer{width:calc(100% - 32px)}.projects-hero{min-height:55dvh;padding:70px 0}.projects-hero h1,.case-hero h1{font-size:clamp(45px,15vw,68px)}.hero-note{margin:28px 0 0}.project-index,.case-study{padding-left:0;padding-right:0}.archive-grid,.proof-grid{grid-template-columns:1fr}.proof{padding-left:0;padding-right:0}.proof-head{padding:40px 0 50px}.archive-featured{grid-column:auto}.case-actions{flex-direction:column;align-items:flex-start}.case-facts{grid-template-columns:1fr;gap:24px}.case-notes{grid-template-columns:1fr;margin-left:0;gap:28px}.next-project{align-items:flex-start;flex-direction:column;gap:16px}.project-footer{gap:20px;flex-direction:column}}
+@media(min-width:701px) and (max-width:1040px){.proof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
