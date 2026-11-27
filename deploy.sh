@@ -8,6 +8,8 @@ MSG="${1:-Update portfolio}"
 
 # Commit as mrfomoweb3 in this repo only
 git config user.name "mrfomoweb3"
+# GitHub noreply address: always maps to the mrfomoweb3 account, so Vercel recognises the author
+git config user.email "88100982+mrfomoweb3@users.noreply.github.com"
 
 # 1) Commit anything that changed and push to GitHub
 git add -A
